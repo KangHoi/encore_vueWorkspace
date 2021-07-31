@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>v-for와 함께 v-if이용하기</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+<body>
+<h2>v-for와 함께 v-if이용하기</h2>
+<div id="app">
+	<label>ENCORE 각 지역 별 개설 클래스 수</label>
+	<input id= "num" type="number">
+	<ul>
+		<li   v-for="(encore,index) in encores"  v-if = "num==(encore.count)"> 
+			{{index+1}}. {{encore.name}}, {{encore.count}}개 클래스
+		</li>
+	</ul>
+</div>
+
+<script>
+	new Vue({
+		el:'#app',
+		data:{
+			encores:[
+				{name: '영등포구', count:3},
+				{name: '남부지구', count:5},
+				{name: '서초지구', count:7}
+			], 
+		}
+	});
+</script>
+
+</body>
+</html>

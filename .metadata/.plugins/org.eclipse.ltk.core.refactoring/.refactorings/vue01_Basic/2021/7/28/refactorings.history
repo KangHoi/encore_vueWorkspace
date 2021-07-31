@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;vue01_Basic/WebContent/vue07_v-moel.html&apos; to &apos;vue07_v-model.html&apos;" description="Rename resource &apos;vue07_v-moel.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/vue07_v-moel.html" name="vue07_v-model.html" stamp="1625796662819" updateReferences="true"/>
+</session>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<!-- Vue CDN --> 
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<!-- 1. 화면 구성 -->
+<div id="app">
+	<h2>{{message}}</h2>
+</div>
+
+<script>
+	/* 2. 데이타 :: Model */
+	var model = {message : "Vue.js START!!"}
+	
+	// 3. 뷰모델 :: VueModel - el(element), data
+	var app = new Vue({ //app라는 Vue 객체가 Vue Model이다.
+		// vue 객체(app인스턴스)는 모델과 뷰를 지켜보면서 모델의 데이터 변화를 뷰에 반영하는 역할을 한다.
+		//화면 부분 중 어느 영역에 적용할전지를 지정한다
+		el : '#app',
+		
+		//el에 적용된 화면에서 출력할 데이터(정보)를 지정한다.
+		data : model
+	});
+//	Vue.config.devtools = true;
+</script>
+
+</body>
+</html>

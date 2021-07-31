@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- Vue Axios CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h2> Encore HRM LIST </h2>
+			<a href="#">사원추가</a> | <a href="#">이름으로 찾기</a> | <a href="#">아이디로 찾기</a> |  <a href="#">모든 사원 보기</a> | 
+			<hr>
+			
+			<br><br>
+		<table id="list">
+
+			<thead>
+				<tr>
+					<th>사원 아이디</th><th>사원명</th><th>부서</th><th>직책</th><th>연봉</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="e in emps">
+					<td>{{e.id}}</td>
+					<td>{{e.name}}</td>
+					<td>{{e.dept_name}}</td>
+					<td>{{e.title}}</td>
+					<td>{{e.salary | round}}</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	
+	</div>
+	
+	<script>
+		new Vue({
+			el: '#app',
+			//data:{} 정적인 데이터를 바인딩 할 때 사용하는 기법
+			//data(){} 동적인, 반응형 데이터를 바인딩 할 때 사용하는 기법
+			data(){
+				return {
+					info: null,
+					errored: false,
+					loading: true
+				}
+			},
+			//axios 기술 연결.. mounted()에서 해줘야 한다..
+			mounted(){
+				axios
+					.get('http://127.0.0.1:7788/api/findAllEmployees')
+					//데이터 받아올 때 nationalflags로 쌓여있으므로 한번 더 들어가야한다.
+					.then(repsonse=>(this.info = repsonse.data))
+					.catch(error =>{
+						console.log(error);
+						this.errored = true; //여기서 error 값 변경
+					})
+					.finally(()=> this.loading = false) //여기서 loading이 끝났음을 알려준다.
+					
+			}
+		})
+	</script>
+</body>
+</html>
+
+
+
+

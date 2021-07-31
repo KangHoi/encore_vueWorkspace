@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+	<div id="flag_section">
+		<h2>National Flags</h2>
+		<table id="tid" border="1px">
+			<thead>
+				<tr>
+					<th>나라이름1</th><th>나라이름2</th><th>국기</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr v-for="flag in flags">
+					<td v-html="flag.name"></td>
+					<td v-html="flag.korname"></td>
+					<td v-html="flag.flag"></td>
+				</tr>
+			</tbody>
+			
+		</table>
+	</div>
+
+</body>
+</html>

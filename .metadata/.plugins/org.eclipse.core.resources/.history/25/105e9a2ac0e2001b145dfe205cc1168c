@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<!-- 
+	이벤트
+	1) 클릭 이벤트
+	2) 키 이벤트 :: enter와 13은 같은 녀석들
+ -->
+<div id="app">
+	아이디 :
+	<input type="text" placeholder="아이디 입력..." v-model="id">
+	<input type="text" placeholder="아이디 입력..." v-model="id" @keyup.enter="sendId">
+	<input type="text" placeholder="아이디 입력..." v-model="id" @keyup.13="sendId">
+	<button @click="sendId"> 결과보기 </button>
+</div>
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			id: '' //초기화..
+		},
+		methods: {
+			sendId(){
+				alert(this.id);
+			}
+		}
+	})
+</script>
+</body>
+</html>

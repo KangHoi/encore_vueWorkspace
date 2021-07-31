@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\encore_kjw\eclipse\04_viewWorkspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4176365252.index
+2406762315.index
+3141523005.index
+3160839030.index
+3521770928.index
+3007064470.index

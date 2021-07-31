@@ -1,0 +1,26 @@
+<!-- 
+	Vue 인스턴스가 생성될 때 
+	내부적으로 중요한 몇 단계를 거친다... 이를 'Life Cycle'이라 한다.
+	1. Vue 인스턴스 생성 직후 : created가 호출.. 훅 된다.
+						   이 때 el, data, methods, filters, computed... 같은 속성들이 활성화되어진다.
+						   
+	2. HTML DOM에 Vue el에서 관찰대상인 화면 영역에 data가 바인딩 되는 과정
+						   : mounted가 호출.. 훅된다
+						     모델에서 받아온 데이터를 el에서 지정한 영역으로 랜더링시킨다..
+	3. 업데이트 : beforeUpdate, updated가 반복적으로 호출.. 훅 된다.
+			   한번 랜더링 된 값이 계속적으로 변경될 때마다 계속 호출된다. 
+	
+	4. Vue 인스턴스가 메모리에서 사라짐 : destroyed가 호출.. 훅된다.
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+	<h2 font-color="blue"> ENCORE INFORMATION </h2>
+<script>
+
+</script>
+</body>
+</html>

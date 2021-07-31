@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+	<div id="app">
+		<h2> {{title}} </h2>
+	</div>
+	<script>
+	setTimeout(() =>{
+		new Vue({
+			el:'#app',
+			data: {
+				title:"안녕하세요"
+			}
+		});
+	}, 2000); //2초 뒤에 {}안의 코드가 동작.. vue 인스턴스가 2초 뒤에 생성.. el..
+	</script>
+
+</body>
+</html>

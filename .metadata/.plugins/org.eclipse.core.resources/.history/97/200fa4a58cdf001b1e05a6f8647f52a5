@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<!-- Vue CDN --> 
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<!-- 1. 화면 구성 -->
+<div id="app">
+	<h2>{{message}}</h2>
+</div>
+
+<script>
+	/* 2. 데이타 :: Model */
+	var model = {message : "Vue.jsp START!!"}
+	
+	// 3. 뷰모델 :: ViewModel - el(element), data
+	new Vue({
+		//화면 부분 중 어느 영역에 적용할전지를 지정한다
+		el : '#app',
+		
+		//el에 적용된 화면에서 출력할 데이터(정보)를 지정한다.
+		data : model
+	});
+</script>
+
+</body>
+</html>

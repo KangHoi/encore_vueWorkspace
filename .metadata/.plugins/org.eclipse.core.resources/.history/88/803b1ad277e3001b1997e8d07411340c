@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id ="app">
+	<h1> ENCORE INFORMATION </h1>
+	<br><br>
+	<h2> Sign Up Form </h2>
+	아이디 <input v-model="id" v-if="id==null" type="text"><br>
+	패스워드 <input  v-model="password" v-if="password==null" type="text"><br>
+	이름 <input v-model="name" type="text"><br>
+	주소 <input v-model="address" type="text"><br>
+	전화번호 <input v-model="phoneNumber" type="text"><br>
+	<button>사원추가</button> <input type="text">
+
+
+	<fieldset id="display" v-if="displayInfo">
+		<span v-html="id"></span>
+		<span v-html="password"></span>
+		<span v-html="name"></span>
+		<span v-html="address"></span>
+		<span v-html="phoneNumber"></span>
+	</fieldset>
+
+</div>
+<script>
+		var model = {
+				id:'',
+				password:'',
+				}
+		var app = new Vue({
+			el: '#app',
+			computed: {
+				displayInfo: function(){
+					return this.id.value();
+					return this.password;
+					return this.name;
+					return this.address;
+					return this.phoneNumber;
+				}
+			}
+		});
+	
+</script>
+</body>
+</html>

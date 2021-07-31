@@ -1,0 +1,55 @@
+<!-- 
+	Vue 인스턴스가 생성될 때 
+	내부적으로 중요한 몇 단계를 거친다... 이를 'Life Cycle'이라 한다.
+	1. Vue 인스턴스 생성 직후 : created가 호출.. 훅 된다.
+						   이 때 el, data, methods, filters, computed... 같은 속성들이 활성화되어진다.
+	2. HTML DOM에 Vue el에서 관찰대상인 화면 영역에 data가 바인딩 되는 과정
+						   : mounted가 호출.. 훅된다 ( axios를 mounted에서 진행해야함)
+						     모델에서 받아온 데이터를 el에서 지정한 영역으로 랜더링시킨다..
+	3. 업데이트 : beforeUpdate, updated가 반복적으로 호출.. 훅 된다.
+			   한번 랜더링 된 값이 계속적으로 변경될 때마다 계속 호출된다. 
+	
+	4. Vue 인스턴스가 메모리에서 사라짐 : destroyed가 호출.. 훅된다.
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<span> 클릭 카운트 : {{count}}</span>
+		<button @click="count++">카운트 증가하기</button>
+	</div>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {count:0},
+			beforeCreate: function(){//vue 속성이 활성화되지 않음.. beforeCreate..undefined
+				console.log('beforeCreate..'+ this.count);
+			},
+			created: function(){ //vue 속성이 활성돠됨.. created..0
+				console.log('created..'+ this.count);
+			},
+			beforeMount: function(){//beforeMount... 연결된 DOM element : [object HTMLDivElement]
+				//DOM 엘러먼트 연결되어서 사실 데이터 렌더링 가능하지만 더 확실히 하기 위해 mounted 단계에서 렌더링 진행
+				console.log('beforeMount..' + this.count);
+				console.log('beforeMount... 연결된 DOM element : ' + this.$el);
+			},
+			mounted: function(){//mounted...0
+				console.log('mounted...' + this.count);
+			},
+			beforeUpdate: function(){ //beforeUpdate..1 업데이트를 실행하면 생성된다..
+				console.log('beforeUpdate...' + this.count);
+			},
+			updated: function(){ //updated...1 업데이트 실행 시 증가
+				console.log('updated...' + this.count);
+			}
+		})
+	</script>
+
+</body>
+</html>

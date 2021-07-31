@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- Vue Axios CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+</head>
+<body>
+<div id="second">
+	<h2>ENCORE SAFE FOOD</h2>
+</div>
+<div id="app">
+	<section v-if="errored">
+		<p>Error In Axios Transport...</p>
+	</section>
+	<table>
+		<thead>
+			<tr style="border: 1px solid green">
+				<th>분류</th><th>이름</th><th>이미지</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+	<script>
+		new Vue({
+			el: '#app',
+			//data:{} 정적인 데이터를 바인딩 할 때 사용하는 기법
+			//data(){} 동적인, 반응형 데이터를 바인딩 할 때 사용하는 기법
+			data(){
+				return {
+					info: null,
+					errored: false,
+					loading: true
+				}
+			},
+			//axios 기술 연결.. mounted()에서 해줘야 한다..
+			mounted(){
+				axios
+					.get('./food.json')
+					.then(repsonse=>(this.info = repsonse.data))
+					.catch(error =>{
+						console.log(error);
+						this.errored = true; //여기서 error 값 변경
+					})
+					.finally(()=> this.loading = false) //여기서 loading이 끝났음을 알려준다.
+					
+			}
+		})
+	</script>
+</body>
+</html>
+
+
+
+

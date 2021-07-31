@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+	<h1> ENCORE INFORMATION </h1>
+	<br><br>
+	<h2> Sign Up Form </h2>
+	아이디 <input type="text">
+	패스워드 <input type="text">
+	이름 <input type="text">
+	주소 <input type="text">
+	전화번호 <input type="text">
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+<body>
+<h2>v-for</h2>
+<div id="app">
+	<h2>객체 배열 - 내용 출력</h2>
+	<ul>
+		<li v-for="encores in encores"> 
+			{{encore.name}}, {{encore.count}}
+		</li>
+	</ul>
+</div>
+<script>
+	new Vue({
+		el:'#app',
+		data:{
+			encore:[
+				{name: '영등포구', count:3},
+				{name: '남부지구', count:5},
+				{name: '서초지구', count:7}
+			]
+		}
+	});
+</script>
+
+</body>
+</html>

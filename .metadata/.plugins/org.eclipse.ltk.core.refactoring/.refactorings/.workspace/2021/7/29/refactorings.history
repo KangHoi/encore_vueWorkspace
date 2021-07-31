@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;vue05_&apos; to &apos;vue05_EncoreHRMSystem&apos;" description="Rename resource &apos;vue05_&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/vue05_" name="vue05_EncoreHRMSystem" stamp="1626222782098" updateReferences="true"/>
+</session>

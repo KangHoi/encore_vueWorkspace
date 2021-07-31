@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id ="second">
+	<h2 v-html="title"></h2>
+</div>
+
+<section id="signup_section">
+	<div id ="signup-form">
+		<h2>Sign Up Form</h2>
+		<form id="frm" action="main.do" method="post">
+		
+		<label><span>아이디</span></label>
+		<input type="text" id="id" v-model="id" placeholder="아이디 입력.."><br>
+		
+		<label><span>패스워드</span></label>
+		<input type="password" id="password" v-model="password" placeholder="패스워드 입력.."><br>
+		
+		<label><span>이름</span></label>
+		<input type="text" id="name" v-model="name" placeholder="이름 입력.."><br>
+		<label><span>주소</span></label>
+		<input type="text" id="address" v-model="address" placeholder="주소 입력.."><br>
+		<label><span>전화번호</span></label>
+		<input type="text" id="phone" v-model="phone" placeholder="전화번호 입력.."><br>
+		
+		<button type="submit"> 사원 추가 </button>
+		<label><input>키엔터</label>
+		</form>
+		
+	</div>
+</section>
+<script>
+		var app = new Vue({
+			el: '#app',
+			data:{
+				
+			},
+			computed: {
+				displayInfo: function(){
+					return this.id.length>0;
+					return this.password.length>0;
+					return this.name.length>0;
+					return this.address.length>0;
+					return this.phoneNumber.length>0;
+				}
+			}
+		});
+	
+</script>
+</body>
+</html>
